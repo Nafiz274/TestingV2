@@ -1,0 +1,102 @@
+```css
+/* General page styling */
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+/* Main heading */
+h1 {
+    color: #00e5ff;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+}
+
+/* Paragraphs */
+p {
+    color: #d1d5db;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Button hover animation */
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff00cc;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Links */
+a {
+    color: #00e5ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff00cc;
+    text-decoration: underline;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+```
