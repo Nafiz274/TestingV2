@@ -10,6 +10,7 @@ body {
 }
 
 /* Style for the login container */
+
 .login-container {
   background-color: whitesmoke;
   padding: 35px;
@@ -28,7 +29,8 @@ form {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] {
   padding: 12px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
@@ -63,4 +65,16 @@ button {
 
 button:hover {
   background-color: #3730a3;
+}
+
+/* Style for the name row */
+.name-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.name-row input {
+  width: 100%;
+  box-sizing: border-box;
 }
