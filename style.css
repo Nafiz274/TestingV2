@@ -5,11 +5,62 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  background-color: #eef2f7;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the login container */
+.login-container {
+  background-color: whitesmoke;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  max-width: calc(100% - 90px);
+  text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 300px;
+  gap: 12px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#togglePassword {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-size: 13px;
+  padding: 4px 0;
+  cursor: pointer;
+  text-align: right;
+}
+
+#togglePassword:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3730a3;
 }
