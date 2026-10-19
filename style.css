@@ -30,11 +30,17 @@ form {
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="tel"] {
   padding: 12px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 14px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 #togglePassword {
@@ -98,6 +104,7 @@ button:hover {
 }
 
 /* Style for the success message */
+/* Success popup background */
 .popup {
   display: none;
   position: fixed;
@@ -108,7 +115,9 @@ button:hover {
   z-index: 1000;
 }
 
+/* Success popup box */
 .popup-content {
+  position: relative;
   background: white;
   padding: 35px;
   border-radius: 12px;
@@ -118,13 +127,33 @@ button:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.popup-content button {
+/* Continue to Login button */
+#continueLogin {
   background: #4f46e5;
   color: white;
   border: none;
   border-radius: 8px;
   padding: 12px;
   cursor: pointer;
+}
+
+/* X close button */
+#closePopup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: auto;
+  padding: 5px 10px;
+  background: none;
+  color: #666;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#closePopup:hover {
+  background: none;
+  color: black;
 }
 
 /* Style for the success GIF */
@@ -134,4 +163,19 @@ button:hover {
   object-fit: contain;
   display: block;
   margin: 0 auto 15px;
+}
+
+/* Style for the steps */
+#step1,
+#step2 {
+  flex-direction: column;
+  gap: 12px;
+}
+
+#step1 {
+  display: flex;
+}
+
+#step2 {
+  display: none;
 }

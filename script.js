@@ -55,11 +55,49 @@ if (signupForm) {
   checkPasswords();
 }
 
+const closePopup = document.getElementById("closePopup");
+
+if (closePopup) {
+  closePopup.addEventListener("click", function () {
+    document.getElementById("successPopup").style.display = "none";
+  });
+}
+
 // Handle the "Continue to Login" button click
 const continueLogin = document.getElementById("continueLogin");
 
 if (continueLogin) {
   continueLogin.addEventListener("click", function () {
     window.location.href = "login.html";
+  });
+}
+
+// Handle multi-step form navigation
+const step1 = document.getElementById("step1");
+const step2 = document.getElementById("step2");
+
+const nextBtn = document.getElementById("nextBtn");
+const backBtn = document.getElementById("backBtn");
+
+if (nextBtn && backBtn) {
+  nextBtn.addEventListener("click", function () {
+    // Check all Step 1 inputs
+    const inputs = step1.querySelectorAll("input");
+
+    for (const input of inputs) {
+      if (!input.reportValidity()) {
+        return;
+      }
+    }
+
+    // Move to Step 2
+    step1.style.display = "none";
+    step2.style.display = "flex";
+  });
+
+  backBtn.addEventListener("click", function () {
+    // Return to Step 1
+    step2.style.display = "none";
+    step1.style.display = "flex";
   });
 }
