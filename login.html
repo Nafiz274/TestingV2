@@ -7,13 +7,41 @@
     <link rel="stylesheet" href="style.css" />
     <title>Website App/Login</title>
   </head>
-  <body>
-    <h1>Login</h1>
 
-    <form>
-      Username: <input type="username" name="username" required /><br /><br />
-      Password: <input type="password" name="password" required /><br /><br />
-      <input type="submit" value="Login" />
-    </form>
+  <body>
+    <div class="login-container">
+      <h1>Welcome Back!</h1>
+      <p>Please enter your credentials to log in.</p>
+
+      <form>
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter username"
+          required
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        />
+        <button type="button" id="togglePassword" required>
+          Show Password
+        </button>
+        <button type="submit">Login</button>
+      </form>
+
+      <p>
+        Don't have an account?
+        <a href="signup.html">Sign Up</a>
+      </p>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
