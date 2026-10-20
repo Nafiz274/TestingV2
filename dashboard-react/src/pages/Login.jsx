@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
@@ -9,6 +9,10 @@ function Login() {
   const [errors, setErrors] = useState({});
 
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  // Determine login type from the URL
+  const role = searchParams.get("role") === "staff" ? "staff" : "volunteer";
 
   // Update username and clear its error
   function handleUsernameChange(e) {
@@ -48,14 +52,20 @@ function Login() {
 
     if (Object.keys(newErrors).length === 0) {
       // Demo login: no real authentication yet
-      navigate("/dashboard");
+      if (role === "staff") {
+        navigate("/staff/dashboard");
+      } else {
+        navigate("/volunteer/dashboard");
+      }
     }
   }
 
   return (
     <div className="login-page">
       <div className="login-container">
-        <h1>Welcome Back!</h1>
+        {/* Dynamic heading based on login type */}
+        <h1>{role === "staff" ? "Staff Login" : "Volunteer Login"}</h1>
+
         <p>Please enter your credentials to log in.</p>
 
         <form onSubmit={handleLogin} noValidate>
@@ -102,8 +112,16 @@ function Login() {
           <button type="submit">Login</button>
         </form>
 
+        {/* Only volunteers can sign up */}
+        {role === "volunteer" && (
+          <p>
+            Don't have an account? <Link to="/signup">Sign Up</Link>
+          </p>
+        )}
+
+        {/* Return to welcome page */}
         <p>
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          <Link to="/">Back to Home</Link>
         </p>
       </div>
     </div>
